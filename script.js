@@ -29,6 +29,28 @@ function getPlayerChoice() {
     }
 
 }
+let playerScore = 0;
+let computerScore = 0;
+let tie = 0;
 
+for (let i=0; i<5; i++){
+    let playerChoice = getPlayerChoice();
+    let computerChoice = getComputerChoice();
+    console.log(playerChoice);
+    console.log(computerChoice);
+if (playerChoice === computerChoice) {
+    alert("Tie!");
+    tie++;
+}
+else if(computerChoice === "Paper" && playerChoice === "Rock" || computerChoice === "Scissors" && playerChoice === "Paper" || computerChoice === "Rock" && playerChoice === "Scissors"){ 
+    alert("You Lose!");
+    computerScore++;
+}
+else {
+    alert("You win!");
+    playerScore++;
+}
 
+}
+alert("Player: " + playerScore + " Computer: " + computerScore + " Ties: " + tie)
 
